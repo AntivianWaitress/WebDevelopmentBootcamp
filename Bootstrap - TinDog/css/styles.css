@@ -1,0 +1,167 @@
+body {
+  font-family: 'Ubuntu';
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat";
+  font-weight: bold;
+}
+
+p {
+  color: #8f8f8f;
+  font-size: 0.8rem;
+}
+
+/** Headings **/
+.big-heading {
+  font-size: 3.5rem;
+  line-height: 1.5;
+  font-weight: 900;
+}
+
+.section-heading {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+/** Containers **/
+
+.container-fluid {
+  padding: 7% 15%;
+}
+
+/** Sections **/
+
+.colored-section{
+  background-color: #ff4c68;
+  color: white;
+}
+
+.white-section{
+  background-color: white;
+}
+
+/** Navigationbar **/
+
+.navbar {
+  font-size: 1.2rem;
+  padding: 0 0 4.5rem 0;
+}
+
+.navbar-brand {
+  font-size: 2.5rem;
+}
+
+.nav-item {
+  margin: 0 15px;
+  font-weight: 300;
+}
+
+/** Title Section **/
+
+.downloadbtn {
+  margin: 5% 3% 5% 0;
+}
+
+#title .container-fluid{
+  padding: 3% 15% 7%;
+  text-align: left;
+}
+
+#iphone_mockup {
+  transform: rotate(25deg);
+  width: 60%;
+  position: absolute;
+  right: 30%;
+}
+
+@media (max-width: 940px) {
+  #iphone_mockup {
+    position: static;
+    transform: rotate(0);
+  }
+
+  #title {
+    text-align: center;
+  }
+}
+
+/** Features Section **/
+
+.feature-title {
+  font-size: 1.5rem;
+}
+
+.features-item {
+  padding-right: 5%;
+}
+
+.features-icon {
+  color: #ef8172;
+  margin-bottom: 1.3rem;
+}
+
+.features-icon:hover {
+  color: #ff4c68;
+}
+
+#features {
+  position: relative;
+}
+
+/** Testimonial Section **/
+
+.testimonial-image {
+  width: 15%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+.testimonial-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+#testimonials {
+  background-color: #ef8172;
+  position: relative;
+}
+
+
+/** Press Section **/
+
+.press-logo {
+  width: 10%;
+  margin: 20px 20px 50px;
+}
+
+#press {
+  background-color: #ef8172;
+  padding-bottom: 3%;
+}
+
+/** Pricing Section **/
+
+.pricing-column {
+  padding: 3% 2%;
+}
+
+.price-text {
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+#pricing {
+  padding: 100px;
+}
+
+/** CTA Section **/
+
+/** Footer **/
+
+.contact-icon {
+  padding: 15px;
+  padding-bottom: 30px;
+  color: black;
+}

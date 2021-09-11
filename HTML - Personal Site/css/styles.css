@@ -1,0 +1,22 @@
+body {
+  background-color: #ebd4d4;
+  font-family: "Lucida Sans Unicode", sans-serif;
+}
+
+hr {
+  border-color: #835858;
+  border-style: none;
+  border-top-style: dotted;
+  border-width: 8px;
+  width: 8%;
+}
+
+h1{
+  color: #463333;
+  font-family: "Lucida Sans Unicode", sans-serif;
+}
+
+h3{
+  color: #463333;
+  font-family: "Lucida Sans Unicode", sans-serif;
+}
