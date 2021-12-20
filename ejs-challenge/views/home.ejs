@@ -8,7 +8,7 @@
     <% if(post.text.length > 100){ %>
     <% let textPreview = post.text.slice(0,100) + "..." %>
     <%=textPreview%>
-    <a href="/posts/<%=post.title%>">Read more</a>
+    <a href="/posts/<%=post._id%>">Read more</a>
     <% }else{ %>
       <%=post.text%>
     <% } %>

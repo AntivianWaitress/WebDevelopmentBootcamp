@@ -1,49 +1,66 @@
+
 //jshint esversion:6
 
-const MongoClient = require("mongodb").MongoClient;
-const assert = require("assert");
+const mongoose = require("mongoose");
 
-const url = "mongodb://localhost:27017";
+mongoose.connect("mongodb://localhost:27017/fruitsDB");
 
-const dbName = "fruitsDB";
-
-const client = new MongoClient(url, {useNewUrlParser: true});
-
-client.connect(function(err){
-  assert.equal(null, err);
-  console.log("Connected successfully to the server");
-
-  const db = client.db(dbName);
-
-  findDocuments(db, function(){
-    client.close();
-  });
+const fruitSchema = new mongoose.Schema ({
+  name: {
+    type: String,
+    required: [true, "Please check your data, no name given."]},
+  score: {
+            type: Number,
+            min: 1,
+            max: 10},
+  review: String
 });
 
-const insertDocuments = function(db, callback){
-  const collection = db.collection("fruits");
-  collection.insertMany([
-    {
-      name: "Apple",
-      score: 8,
-      review: "Great fruit"
-    },
-    {
-      name: "Orange",
-      score: 6,
-      review: "Kinda sour"
-    },
-    {
-    name: "Banana",
-    score: 9,
-    review: "Great stuff!"
-  }
-], function(err, result){
-    assert.equal(err, null);
-    console.log("Inserted 3 Documents into the collection");
-    callback(result);
-    })
-}
+const Fruit = mongoose.model("Fruit", fruitSchema);
+
+const personSchema = new mongoose.Schema ({
+  name: String,
+  age: Number,
+  favoriteFruit: fruitSchema
+  });
+
+  const Person = mongoose.model("Person", personSchema);
+
+  const strawberry = new Fruit({
+    name: "Strawberry",
+    score: 10,
+    review: "The best."
+  });
+
+  strawberry.save();
+
+  Person.updateOne({name: "John"}, {favoriteFruit: strawberry}, function(err){
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successfully changed.");
+    }
+  })
+
+  // const person = new Person({
+  //   name: "Amy",
+  //   age: 12,
+  //   favoriteFruit: pineapple
+  // });
+  //
+  // person.save();
+
+  // Fruit.find(function(err, fruits){
+  //   if(err){
+  //     console.log(err);
+  //   }else{
+  //     mongoose.connection.close();
+  //
+  //     fruits.forEach(function(fruit){
+  //       console.log(fruit.name);
+  //     });
+  //   }
+  // });
 
 const findDocuments = function(db, callback){
   const collection = db.collection("fruits");

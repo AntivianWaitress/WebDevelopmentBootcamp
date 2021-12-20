@@ -1,0 +1,17 @@
+{
+  "name": "wiki-api",
+  "version": "1.0.0",
+  "description": "API for using the Web-Dev-Bootcamp-Wiki, containing all programming knowledge and topics learned in Dr. Yu's Bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kira Kowalski",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^6.1.0"
+  }
+}
